@@ -1,5 +1,6 @@
 import requests
 import time
+import threading
 
 class CurrencyAPI:
     cache = {}
@@ -99,8 +100,18 @@ class PrivatAPI(CurrencyAPI):
 
 curr_mono = MonoAPI('Monobank', '', 'https://api.monobank.ua/bank/currency')
 curr_privat = PrivatAPI('PrivatBank', '', 'https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5')
+# thread_mono = threading.Thread(target=curr_mono.get_currency)
+# thread_privat = threading.Thread(target=curr_privat.get_currency)
+start = time.time()
 curr_mono.get_currency()
 curr_privat.get_currency()
-print('*' * 10 + '.....Повторний запрос.....' + '*' * 10)
-curr_mono.get_currency()
-curr_privat.get_currency()
+# start = time.time()
+# thread_mono.start()
+# thread_privat.start()
+# thread_mono.join()
+# thread_privat.join()
+end = time.time()
+print(end - start)
+# print('*' * 10 + '.....Повторний запрос.....' + '*' * 10)
+# curr_mono.get_currency()
+# curr_privat.get_currency()
