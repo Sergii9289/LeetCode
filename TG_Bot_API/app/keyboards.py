@@ -4,11 +4,6 @@ from aiogram.types import (ReplyKeyboardMarkup, KeyboardButton,
 menu = [
     [InlineKeyboardButton(text="Курс валют PrivatBank", callback_data="privat"),
      InlineKeyboardButton(text="Курс валют MonoBank", callback_data="mono")],
-    # [InlineKeyboardButton(text='💳 Купити токени', callback_data='buy_tokens'),
-    #  InlineKeyboardButton(text='💰 Баланс', callback_data='balance')],
-    # [InlineKeyboardButton(text='💎 Партнерська програма', callback_data='ref'),
-    #  InlineKeyboardButton(text='🎁 Безкоштовні токени', callback_data='free_tokens')],
-    # [InlineKeyboardButton(text='🔎 Допомога', callback_data='help')]
 ]
 
 menu = InlineKeyboardMarkup(inline_keyboard=menu)
